@@ -110,11 +110,11 @@ public class Graph {
         System.out.println(isConnected(edges));
 
         /*
-        //this is for hasPath function
+        //this is for hasPath function;*/
         System.out.println("enter starting vertex for checking has path");
         int sv=sc.nextInt();
         System.out.println("enter ending vertex for checking has path");
         int ev=sc.nextInt();
-        System.out.println(hasPath(edges,sv,ev));*/
+        System.out.println(hasPath(edges,sv,ev));
     }
 }
