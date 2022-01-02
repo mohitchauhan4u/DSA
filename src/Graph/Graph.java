@@ -4,10 +4,10 @@ import java.util.*;
 
 // revision starts from today
 public class Graph {
-    public static ArrayList getPathBFS(int[][] adjMatrix, int s, int e) {
+    public static ArrayList<Integer> getPathBFS(int[][] adjMatrix, int s, int e) {
         Queue<Integer> pendingVertices = new LinkedList<>();
         HashMap<Integer, Integer> map = new HashMap<>();
-        boolean visited[] = new boolean[adjMatrix.length];
+        boolean[] visited = new boolean[adjMatrix.length];
         visited[s] = true;
         pendingVertices.add(s);
         map.put(s, -1);
