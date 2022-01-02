@@ -1,11 +1,45 @@
 package Graph;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 // revision starts from today
 public class Graph {
+    public static ArrayList getPathBFS(int[][] adjMatrix, int s, int e) {
+        Queue<Integer> pendingVertices = new LinkedList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        boolean visited[] = new boolean[adjMatrix.length];
+        visited[s] = true;
+        pendingVertices.add(s);
+        map.put(s, -1);
+        boolean pathFound = false;
+        while (!pendingVertices.isEmpty()) {
+            int currentVertex = pendingVertices.poll();
+            for (int i = 0; i < adjMatrix.length; i++) {
+                if (adjMatrix[currentVertex][i] == 1 && !visited[i]) {
+                    pendingVertices.add(i);
+                    visited[i] = true;
+                    map.put(i, currentVertex);
+                    if (i == e) {
+                        pathFound = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (pathFound) {
+            ArrayList<Integer> path = new ArrayList<>();
+            int currentVertex = e;
+            while (currentVertex != -1) {
+                path.add(currentVertex);
+                int parent = map.get(currentVertex);
+                currentVertex = parent;
+            }
+            return path;
+        } else {
+            return null;
+        }
+    }
+
     public static void printHelperDFS(int[][] edges, int sv, boolean[] visited) {
         System.out.println(sv);
         visited[sv] = true;
@@ -31,14 +65,14 @@ public class Graph {
         int n = edges.length;
         for (int i = 0; i < n; i++) {
             if (edges[sv][i] == 1 && !visited[i]) {
-                hasPathHelper(edges, i,visited);
+                hasPathHelper(edges, i, visited);
             }
         }
     }
 
     public static boolean hasPath(int[][] edges, int sv, int ev) {
         boolean[] visited = new boolean[edges.length];
-        hasPathHelper(edges, sv,visited);
+        hasPathHelper(edges, sv, visited);
         return visited[ev];
     }
 
@@ -113,9 +147,9 @@ public class Graph {
         /*
         //this is for hasPath function;*/
         System.out.println("enter starting vertex for checking has path");
-        int sv=sc.nextInt();
+        int sv = sc.nextInt();
         System.out.println("enter ending vertex for checking has path");
-        int ev=sc.nextInt();
-        System.out.println(hasPath(edges,sv,ev));
+        int ev = sc.nextInt();
+        System.out.println(hasPath(edges, sv, ev));
     }
 }
