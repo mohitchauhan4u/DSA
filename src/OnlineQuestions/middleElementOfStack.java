@@ -1,6 +1,4 @@
-package DSA_450;
-
-import java.util.Stack;
+package OnlineQuestions;
 
 public class middleElementOfStack {
    /* static boolean ispar(String x)
