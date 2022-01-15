@@ -4,9 +4,10 @@ public class Array {
     public static void main(String[] args) {
         System.out.println(romanToInt("MDCDLXI"));
     }
+
     public static int romanToInt(String s) {
         int ans = 0;
-        int i = 0;
+        int i;
         for (i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) == 'I' && s.charAt(i + 1) != 'V' && s.charAt(i + 1) != 'X') {
                 ans += 1;
