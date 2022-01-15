@@ -56,6 +56,29 @@ public class MinStepsTo1 {
 
     }
 
+    public static int minStepIterative(int n){
+
+        if(n==1){
+            return 0;
+        }
+        int[] dp=new int[n+1];
+        dp[0]=0;
+        dp[1]=0;
+        for(int i=2;i<=n;i++){
+            int sub1=dp[i-1];
+            int div2=Integer.MAX_VALUE;
+            if(i%2==0){
+                div2=dp[i/2];
+            }
+            int div3=Integer.MAX_VALUE;
+            if(i%3==0){
+                div3=dp[i/3];
+            }
+            dp[i]=1+Math.min(sub1,Math.min(div2,div3));
+        }
+        return dp[n];
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter value of n");
@@ -64,5 +87,6 @@ public class MinStepsTo1 {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, -1);
         System.out.println(minStepsTo1WithDP(n, dp));
+        System.out.println(minStepIterative(n));
     }
 }
