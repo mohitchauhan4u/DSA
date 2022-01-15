@@ -3,8 +3,6 @@ package DynamicProgramming;
 import java.util.Scanner;
 
 public class Fibonacci {
-
-
     // without dp O(2^n)
     public static long fib1(int n) {
         if (n == 0 || n == 1) {
@@ -12,7 +10,6 @@ public class Fibonacci {
         }
         return fib1(n - 1) + fib1(n - 2);
     }
-
     // dp O(n)
     public static long fib2(int n, long[] dp) {
         if (n == 0 || n == 1) {
