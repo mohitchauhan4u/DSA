@@ -41,10 +41,11 @@ public class Fibonacci {
     }
 
     // iterative dp
-    public static long fib3(int n, long[] dp) {
+    public static long fib3(int n) {
         if (n == 0 || n == 1) {
             return n;
         }
+        long[] dp = new long[n + 1];
         dp[0] = 0;
         dp[1] = 1;
         for (int i = 2; i <= n; i++) {
@@ -60,6 +61,6 @@ public class Fibonacci {
         long[] dp = new long[n + 1];
         // Arrays.fill(dp, -1);
         System.out.println(fib2(n, dp));
-        System.out.println(fib3(n, dp));
+        System.out.println(fib3(n));
     }
 }
