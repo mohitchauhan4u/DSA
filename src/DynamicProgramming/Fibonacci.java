@@ -15,7 +15,7 @@ public class Fibonacci {
         if (n == 0 || n == 1) {
             return n;
         }
-        long ans1, ans2;
+        /*long ans1, ans2;
         if (dp[n - 1] == 0) {
             ans1 = fib2(n - 1, dp);
             dp[n - 1] = ans1;
@@ -28,7 +28,16 @@ public class Fibonacci {
         } else {
             ans2 = dp[n - 2];
         }
-        return ans1 + ans2;
+        return ans1 + ans2;*/
+        // or
+        if (dp[n - 1] == 0) {
+            dp[n - 1] = fib2(n - 1, dp);
+        }
+        if (dp[n - 2] == 0) {
+            dp[n - 2] = fib2(n - 2, dp);
+        }
+        dp[n]=dp[n-1]+dp[n-2];
+        return dp[n];
     }
     // iterative dp
     public static long fib3(int n,long[] dp){
