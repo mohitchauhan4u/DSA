@@ -2,26 +2,29 @@ package DynamicProgramming;
 
 import java.util.Scanner;
 
-public class Fibbonaci {
+public class Fibonacci {
 
-    public static long fibb1(int n) {
+
+    // without dp O(2^n)
+    public static long fib1(int n) {
         if (n == 0 || n == 1) {
             return n;
         }
-        return fibb1(n - 1) + fibb1(n - 2);
+        return fib1(n - 1) + fib1(n - 2);
     }
-    public static long fibb2(int n,long[] dp) {
+    // dp O(n)
+    public static long fib2(int n, long[] dp) {
         if (n == 0 || n == 1) {
             return n;
         }
         long ans1,ans2;
         if(dp[n-1]==0){
-            ans1=fibb2(n-1,dp);
+            ans1= fib2(n-1,dp);
             dp[n-1]=ans1;
         }else {
             ans1=dp[n-1];
         }if(dp[n-2]==0){
-            ans2=fibb2(n-2,dp);
+            ans2= fib2(n-2,dp);
             dp[n-2]=ans2;
         }else {
             ans2=dp[n-2];
@@ -32,9 +35,9 @@ public class Fibbonaci {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        System.out.println(fibb1(n));
+        System.out.println(fib1(n));
         long[] dp=new long[n];
         // Arrays.fill(dp, -1);
-        System.out.println(fibb2(n,dp));
+        System.out.println(fib2(n,dp));
     }
 }
