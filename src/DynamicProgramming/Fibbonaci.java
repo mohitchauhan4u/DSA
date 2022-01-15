@@ -1,9 +1,8 @@
 package DynamicProgramming;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Fibonaci {
+public class Fibbonaci {
 
     public static long fibb1(int n) {
         if (n == 0 || n == 1) {
@@ -11,7 +10,7 @@ public class Fibonaci {
         }
         return fibb1(n - 1) + fibb1(n - 2);
     }
-public static long fibb2(int n,long[] dp) {
+    public static long fibb2(int n,long[] dp) {
         if (n == 0 || n == 1) {
             return n;
         }
@@ -35,7 +34,7 @@ public static long fibb2(int n,long[] dp) {
         int n=sc.nextInt();
         System.out.println(fibb1(n));
         long[] dp=new long[n];
-       // Arrays.fill(dp, -1);
+        // Arrays.fill(dp, -1);
         System.out.println(fibb2(n,dp));
     }
 }
