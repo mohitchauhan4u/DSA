@@ -55,30 +55,6 @@ public class MinStepsTo1 {
         return 1 + Math.min(subtractingByOne, Math.min(dividingByThree, dividingByTwo));
 
     }
-// iterative
-
-//    public static int minStepsTo1WithDP(int n) {
-//        if (n == 1) {
-//            return 0;
-//        }
-//        int[] dp = new int[n + 1];
-//        dp[0] = 0;
-//        dp[1] = 0;
-//        for (int i = 2; i <= n; i++) {
-//            int subtractingByOne;
-//            int dividingByTwo = Integer.MAX_VALUE;
-//            int dividingByThree = Integer.MAX_VALUE;
-//            subtractingByOne = dp[n - 1];
-//            if (i % 2 == 0) {
-//                dividingByTwo = dp[i / 2];
-//            }
-//            if (i % 3 == 0) {
-//                dividingByThree = dp[i / 3];
-//            }
-//            dp[i] = 1 + Math.min(subtractingByOne, Math.min(dividingByThree, dividingByTwo));
-//        }
-//        return dp[n];
-//    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -88,6 +64,5 @@ public class MinStepsTo1 {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, -1);
         System.out.println(minStepsTo1WithDP(n, dp));
-        //System.out.println(minStepsTo1WithDP(n));
     }
 }
