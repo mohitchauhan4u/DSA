@@ -13,12 +13,22 @@ public class LootHouses {
         for(int i=0;i<n;i++){
             money[i]=sc.nextInt();
         }
-
-
-        return -1;
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return money[0];
+        }
+        int[] maxAns=new int[n];
+        maxAns[0]=money[0];
+        maxAns[1]=Math.max(money[0],money[1]);
+        for(int i=2;i<n;i++){
+            maxAns[i]=Math.max(maxAns[i-1],money[i]+maxAns[i-2]);
+            }
+        return maxAns[n-1];
     }
 
     public static void main(String[] args) {
-        System.out.println("Answer is: "+lootHouses());
+        System.out.println("Maximum loot is: "+lootHouses());
     }
 }
