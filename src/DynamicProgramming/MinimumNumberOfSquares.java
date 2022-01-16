@@ -45,9 +45,11 @@ public class MinimumNumberOfSquares {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter value of n");
         int n=sc.nextInt();
-        int[]dp=new int[n+1];
+        //recursive call
+        /*int[]dp=new int[n+1];
         Arrays.fill(dp,-1);
-        System.out.println(minNumOfSquares(n,dp));
+        System.out.println(minNumOfSquares(n,dp));*/
+        //iterative call
         System.out.println(minSquareIterative(n));
     }
 }
