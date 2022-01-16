@@ -1,6 +1,5 @@
-package DynamicProgramming;
+package DynamicProgramming_1D;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinimumNumberOfSquares {
