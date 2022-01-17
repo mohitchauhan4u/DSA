@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Adobe_PythagoreanTriplet {
     //O(n^3)
     // Returns true if there is Pythagorean triplet in ar[0..n-1]
-    static boolean isTriplet1(int ar[], int n)
+    static boolean isTriplet1(int[] ar, int n)
     {
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
@@ -27,7 +27,7 @@ public class Adobe_PythagoreanTriplet {
     // Returns true if there is a triplet with following property
     // A[i]*A[i] = A[j]*A[j] + A[k]*[k]
     // Note that this function modifies given array
-    static boolean isTriplet2(int arr[], int n)
+    static boolean isTriplet2(int []arr, int n)
     {
         // Square array elements
         for (int i = 0; i < n; i++)
