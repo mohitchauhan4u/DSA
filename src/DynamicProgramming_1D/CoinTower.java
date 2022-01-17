@@ -1,9 +1,33 @@
 package DynamicProgramming_1D;
 
 public class CoinTower {
-
+    public static String findWinner(int n, int x, int y) {
+        if (x > y) {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+        boolean[] dp = new boolean[n + 1];
+        for (int i = 1; i <= n; i++) {
+            if (i == 1 || i == x || i == y) {
+                dp[i] = true;
+            } else if (i < x) {
+                dp[i] = !dp[i - 1];
+            } else if (i < y) {
+                dp[i] = !(dp[i - x] && dp[i - 1]);
+            } else {
+                dp[i] = !(dp[i - x] && dp[i - y] && dp[i - 1]);
+            }
+        }
+        boolean result = dp[n];
+        if (result) {
+            return "Beerus";
+        } else {
+            return "Whis";
+        }
+    }
 
     public static void main(String[] args) {
-
+        System.out.println(findWinner(10, 2, 4));
     }
 }
