@@ -25,7 +25,5 @@ public class StairCase {
         System.out.println("Enter n");
         int n = sc.nextInt();
         System.out.println(stairCase(n));
-
-
     }
 }
