@@ -15,6 +15,6 @@ public class MinCostPathProblem {
     }
 
     public static void main(String[] args) {
-
+    
     }
 }
