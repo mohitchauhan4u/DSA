@@ -1,5 +1,5 @@
 package OnlineQuestions;
-
+import java.util.Stack;
 class ListNode{
     int val;
     ListNode next;
@@ -49,8 +49,38 @@ class LeetCodeAddTwoNumber {
     }
 
 
+    public static  ListNode addTwoNumbersReverse(ListNode l1, ListNode l2) {
+        Stack<Integer> s1=new Stack<>();
+        while(l1!=null){
+            s1.push(l1.val);
+            l1=l1.next;
+        }
+        Stack<Integer> s2=new Stack<>();
+        while(l2!=null){
+            s2.push(l2.val);
+            l2=l2.next;
+        }
+        int carry=0;
+        ListNode head=null;
+        while(carry!=0 || !s1.isEmpty() || !s2.isEmpty()){
+            int val1=s1.isEmpty()?0:s1.pop();
+            int val2=s2.isEmpty()?0:s2.pop();
+            int sum=(val1+val2+carry)/10;
+            if(head==null){
+                head=new ListNode(sum);
+            }else{
+                ListNode newNode=new ListNode(sum);
+                newNode.next=head;
+                head=newNode;
+            }
+            carry=sum%10;
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
         System.out.println(addTwoNumbers(null,null));
         System.out.println(addTwoNumbersIterative(null,null));
+        System.out.println(addTwoNumbersReverse(null,null));
     }
 }
