@@ -2,8 +2,29 @@ package DynamicProgramming_2D;
 
 public class MinCostPathProblem {
 
+    public static int minCostPAthProblemIterative(int[][] path) {
 
-    public static int minCostPathProblem(int[][] path) {
+        int m = path.length;
+        int n = path[0].length;
+        int[][] minAns = new int[m + 1][n + 1];
+        for (int i = 0; i < minAns.length; i++) {
+            for (int j = 0; j < minAns[0].length; j++) {
+                minAns[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                if (i == m - 1 && j == n - 1) {
+                    minAns[i][j] = path[i][j];
+                    continue;
+                }
+                    minAns[i][j] = path[i][j] + Math.min(minAns[i + 1][j], Math.min(minAns[i + 1][j + 1], minAns[i][j + 1]));
+            }
+        }
+        return minAns[0][0];
+    }
+
+    public static int minCostPathProblemRecursivedp(int[][] path) {
         int[][] minAns = new int[path.length][path[0].length];
         for (int i = 0; i < path.length; i++) {
             for (int j = 0; j < path[i].length; j++) {
@@ -33,7 +54,9 @@ public class MinCostPathProblem {
         int[][] path2 = {{10, 6, 9, 0},
                 {-23, 8, 9, 90},
                 {-200, 0, 89, 200}};
-        System.out.println(minCostPathProblem(path1));
-        System.out.println(minCostPathProblem(path2));
+        System.out.println(minCostPathProblemRecursivedp(path1));
+        System.out.println(minCostPathProblemRecursivedp(path2));
+        System.out.println(minCostPAthProblemIterative(path1));
+        System.out.println(minCostPAthProblemIterative(path2));
     }
 }
