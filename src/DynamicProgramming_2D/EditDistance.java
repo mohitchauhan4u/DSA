@@ -2,6 +2,25 @@ package DynamicProgramming_2D;
 
 public class EditDistance {
 
+    public static int editDistanceProblemIterative(String s1, String s2) {
+        int m = s1.length();
+        int n = s2.length();
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i <= m; i++) {
+            dp[i][0]=i;
+        }
+        for (int j = 0; j <= n; j++) {
+            dp[0][j] = j;
+        }
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                dp[i][j]=Math.min(dp[i-1][j-1],Math.min(dp[i-1][j],dp[i][j-1]));
+            }
+        }
+
+        return dp[m][n];
+    }
+
     public static int editDistanceProblemRecursive(String s1, String s2) {
         int[][] dp = new int[s1.length() + 1][s2.length() + 1];
         for (int i = 0; i <= s1.length(); i++) {
@@ -28,7 +47,7 @@ public class EditDistance {
         if (s1.charAt(0) == s2.charAt(0)) {
             int smallAns = editDistanceProblemRecursiveHelper(s1.substring(1), s2.substring(1), dp);
             dp[m - 1][n - 1] = smallAns;
-            dp[m][n] = 0 + smallAns;
+            dp[m][n] = smallAns;
         } else {
             int substitute = editDistanceProblemRecursiveHelper(s1.substring(1), s2.substring(1), dp);
             dp[m - 1][n - 1] = substitute;
@@ -46,5 +65,8 @@ public class EditDistance {
         System.out.println(editDistanceProblemRecursive("mohit", "rohit"));
         System.out.println(editDistanceProblemRecursive("ab", "adc"));
         System.out.println(editDistanceProblemRecursive("whgtdwhgtdg", "aswcfg"));
+        System.out.println(editDistanceProblemIterative("mohit", "rohit"));
+        System.out.println(editDistanceProblemIterative("ab", "adc"));
+        System.out.println(editDistanceProblemIterative("whgtdwhgtdg", "aswcfg"));
     }
 }
