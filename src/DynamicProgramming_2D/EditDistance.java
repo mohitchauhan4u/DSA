@@ -1,8 +1,8 @@
 package DynamicProgramming_2D;
 
 public class EditDistance {
-
-    public static int editDistanceProblemIterative(String s1, String s2) {
+    //wrong code
+    /*public static int editDistanceProblemIterative(String s1, String s2) {
         int m = s1.length();
         int n = s2.length();
         int[][] dp = new int[m + 1][n + 1];
@@ -19,7 +19,7 @@ public class EditDistance {
         }
 
         return dp[m][n];
-    }
+    }*/
 
     public static int editDistanceProblemRecursive(String s1, String s2) {
         int[][] dp = new int[s1.length() + 1][s2.length() + 1];
@@ -65,8 +65,8 @@ public class EditDistance {
         System.out.println(editDistanceProblemRecursive("mohit", "rohit"));
         System.out.println(editDistanceProblemRecursive("ab", "adc"));
         System.out.println(editDistanceProblemRecursive("whgtdwhgtdg", "aswcfg"));
-        System.out.println(editDistanceProblemIterative("mohit", "rohit"));
-        System.out.println(editDistanceProblemIterative("ab", "adc"));
-        System.out.println(editDistanceProblemIterative("whgtdwhgtdg", "aswcfg"));
+//        System.out.println(editDistanceProblemIterative("mohit", "rohit"));
+//        System.out.println(editDistanceProblemIterative("ab", "adc"));
+//        System.out.println(editDistanceProblemIterative("whgtdwhgtdg", "aswcfg"));
     }
 }
