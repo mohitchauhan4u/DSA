@@ -17,7 +17,7 @@ public class LCS {
     }
 
     private static int LCSHelper(String s1, String s2, int i, int j, int[][] dp) {
-        if (i >= s1.length() || j >= s2.length()) {
+        if (i == s1.length() || j == s2.length()) {
             return 0;
         }
         if (dp[i][j] != Integer.MIN_VALUE) {
