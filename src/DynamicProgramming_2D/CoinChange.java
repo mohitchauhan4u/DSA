@@ -22,5 +22,8 @@ public class CoinChange {
         int[] arr3={2,3};
         int target3=11;
         System.out.println(coinChangeProblem(target3,arr3));
+        int[] arr4={1,2,5};
+        int target4=11;
+        System.out.println(coinChangeProblem(target4,arr4));
     }
 }
