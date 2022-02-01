@@ -3,6 +3,7 @@ package OnlineQuestions;
 import java.util.Arrays;
 
 public class LeetcodeConvert1DArrayInto2DArray {
+    //wrong code
     public static int[][] construct2DArray(int[] arr, int m, int n) {
         int[][] ans=new int[m][n];
         int i=0;
