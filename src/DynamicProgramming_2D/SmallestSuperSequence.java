@@ -3,6 +3,7 @@ package DynamicProgramming_2D;
 import java.util.HashMap;
 
 public class SmallestSuperSequence {
+    //wrong code
     public static int smallestSuperSequenceRecursive(String s1, String s2,int i,int j) {
         if(s1.length()==i || s2.length()==j){
             return Integer.MAX_VALUE;
