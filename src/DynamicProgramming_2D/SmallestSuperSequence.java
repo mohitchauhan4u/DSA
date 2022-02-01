@@ -23,16 +23,33 @@ public class SmallestSuperSequence {
             }
         }
         for (int i = 0; i < s2.length(); i++) {
-
+            if(map1.containsKey(s2.charAt(i)) && map2.containsKey(s2.charAt(i))){
+                if(map1.get(s2.charAt(i))>map2.get(s2.charAt(i))){
+                    map2.remove(s2.charAt(i));
+                }else{
+                    map1.remove(s2.charAt(i));
+                }
+            }
         }
-
-
-        return -1;
+        int ans=0;
+        for (int i = 0; i < s1.length(); i++) {
+            if (map1.containsKey(s1.charAt(i))) {
+                ans+= map1.get(s1.charAt(i));
+                map1.remove(s1.charAt(i));
+            }
+        } for (int i = 0; i < s2.length(); i++) {
+            if (map2.containsKey(s2.charAt(i))) {
+                ans+= map2.get(s2.charAt(i));
+                map2.remove(s2.charAt(i));
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
         System.out.println(smallestSuperSequence("ab", "ac"));//3
         System.out.println(smallestSuperSequence("qerepct", "pqqrpt"));//9
-        System.out.println(smallestSuperSequence("ab", "qerepct"));//8
+        System.out.println(smallestSuperSequence("ab", "qerepct"));//9
+        System.out.println(smallestSuperSequence("ac", "qerepct"));//8
     }
 }
