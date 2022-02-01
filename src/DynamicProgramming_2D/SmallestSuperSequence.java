@@ -3,7 +3,17 @@ package DynamicProgramming_2D;
 import java.util.HashMap;
 
 public class SmallestSuperSequence {
-    public static int smallestSuperSequence(String s1, String s2) {
+    public static int smallestSuperSequenceRecursive(String s1, String s2,int i,int j) {
+        if(s1.length()==i || s2.length()==j){
+            return Integer.MAX_VALUE;
+        }
+        if(s1.charAt(i)==s2.charAt(j)){
+            return 1+smallestSuperSequenceRecursive(s1,s2,i+1,j+1);
+        }
+        return 1+Math.min(smallestSuperSequenceRecursive(s1,s2,i,j+1),smallestSuperSequenceRecursive(s1,s2,i+1,j));
+    }
+
+        public static int smallestSuperSequenceMap(String s1, String s2) {
         HashMap<Character, Integer> map1 = new HashMap<>();
         HashMap<Character, Integer> map2 = new HashMap<>();
         for (int i = 0; i < s1.length(); i++) {
@@ -47,12 +57,20 @@ public class SmallestSuperSequence {
     }
 
     public static void main(String[] args) {
-        System.out.println(smallestSuperSequence("ab", "ac"));//3
-        System.out.println(smallestSuperSequence("qerepct", "pqqrpt"));//9
-        System.out.println(smallestSuperSequence("ab", "qerepct"));//9
-        System.out.println(smallestSuperSequence("ac", "qerepct"));//8
-        System.out.println(smallestSuperSequence("rohit", "mohit"));//6
-        System.out.println(smallestSuperSequence("rohit", ""));//5
-        System.out.println(smallestSuperSequence("rahul", "mohit"));//9
+        System.out.println(smallestSuperSequenceMap("ab", "ac"));//3
+        System.out.println(smallestSuperSequenceMap("qerepct", "pqqrpt"));//9
+        System.out.println(smallestSuperSequenceMap("ab", "qerepct"));//9
+        System.out.println(smallestSuperSequenceMap("ac", "qerepct"));//8
+        System.out.println(smallestSuperSequenceMap("rohit", "mohit"));//6
+        System.out.println(smallestSuperSequenceMap("rohit", ""));//5
+        System.out.println(smallestSuperSequenceMap("rahul", "mohit"));//9
+        System.out.println("//");
+        System.out.println(smallestSuperSequenceRecursive("ab", "ac",0,0));//3
+        System.out.println(smallestSuperSequenceRecursive("qerepct", "pqqrpt",0,0));//9
+        System.out.println(smallestSuperSequenceRecursive("ab", "qerepct",0,0));//9
+        System.out.println(smallestSuperSequenceRecursive("ac", "qerepct",0,0));//8
+        System.out.println(smallestSuperSequenceRecursive("rohit", "mohit",0,0));//6
+        System.out.println(smallestSuperSequenceRecursive("rohit", "",0,0));//5
+        System.out.println(smallestSuperSequenceRecursive("rahul", "mohit",0,0));//9
     }
 }
