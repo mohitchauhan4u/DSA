@@ -51,5 +51,8 @@ public class SmallestSuperSequence {
         System.out.println(smallestSuperSequence("qerepct", "pqqrpt"));//9
         System.out.println(smallestSuperSequence("ab", "qerepct"));//9
         System.out.println(smallestSuperSequence("ac", "qerepct"));//8
+        System.out.println(smallestSuperSequence("rohit", "mohit"));//6
+        System.out.println(smallestSuperSequence("rohit", ""));//5
+        System.out.println(smallestSuperSequence("rahul", "mohit"));//9
     }
 }
