@@ -5,9 +5,9 @@ public class CoinChange {
     public static int coinChangeProblem(int target,int[] arr){
         int[] dp=new int[target+1];
         dp[0]=1;
-        for (int i=0;i< arr.length;i++){
-            for (int j=arr[i];j< dp.length;j++){
-                dp[j]+=dp[j-arr[i]];
+        for (int k : arr) {
+            for (int j = k; j < dp.length; j++) {
+                dp[j] += dp[j - k];
             }
         }
         return dp[target];
