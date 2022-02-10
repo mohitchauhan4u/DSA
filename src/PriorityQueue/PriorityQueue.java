@@ -92,7 +92,6 @@ class PriorityQueueMin<T> {
         return heap.size();
     }
 }
-
 // wrong and incomplete
 class PriorityQueueMax<T> {
     private ArrayList<Element<T>> heap;
