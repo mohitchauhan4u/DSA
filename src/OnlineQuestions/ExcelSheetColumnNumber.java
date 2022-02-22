@@ -11,6 +11,8 @@ public class ExcelSheetColumnNumber {
 
     public static void main(String[] args) {
         System.out.println(titleToNumber("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+        System.out.println(titleToNumber("ABCDEFGHIJKLM"));
+        System.out.println(titleToNumber("NOPQRSTUVWXYZ"));
         System.out.println(titleToNumber("AB"));
         System.out.println(titleToNumber("A"));
     }
