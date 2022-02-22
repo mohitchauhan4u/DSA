@@ -40,26 +40,6 @@ public class Graph {
         }
     }
 
-    public static void printHelperDFS(int[][] edges, int sv, boolean[] visited) {
-        System.out.println(sv);
-        visited[sv] = true;
-        int n = edges.length;
-        for (int i = 0; i < n; i++) {
-            if (edges[sv][i] == 1 && !visited[i]) {
-                printHelperDFS(edges, i, visited);
-            }
-        }
-    }
-
-    public static void printDFS(int[][] edges) {
-        boolean[] visited = new boolean[edges.length];
-        for (int i = 0; i < edges.length; i++) {
-            if (!visited[i]) {
-                printHelperDFS(edges, i, visited);
-            }
-        }
-    }
-
     private static void hasPathHelper(int[][] edges, int sv, boolean[] visited) {
         visited[sv] = true;
         int n = edges.length;
@@ -95,6 +75,26 @@ public class Graph {
             }
         }
         return true;
+    }
+
+    public static void printHelperDFS(int[][] edges, int sv, boolean[] visited) {
+        System.out.println(sv);
+        visited[sv] = true;
+        int n = edges.length;
+        for (int i = 0; i < n; i++) {
+            if (edges[sv][i] == 1 && !visited[i]) {
+                printHelperDFS(edges, i, visited);
+            }
+        }
+    }
+
+    public static void printDFS(int[][] edges) {
+        boolean[] visited = new boolean[edges.length];
+        for (int i = 0; i < edges.length; i++) {
+            if (!visited[i]) {
+                printHelperDFS(edges, i, visited);
+            }
+        }
     }
 
     public static void printHelperBFS(int[][] edges, int sv, boolean[] visited) {
