@@ -1,9 +1,36 @@
+// A package declaration. It is a way to organize classes in a package.
 package Graph;
+
+// Importing the java.util package.
 
 import java.util.*;
 
-// revision starts from today Feb 22,2022
+/**
+ * Given a graph represented as an adjacency matrix, and two vertices, find the shortest path between the two vertices
+ * <p>
+ * # **Q2. (10 points)** Given a graph represented as an adjacency matrix, and two vertices, find the shortest path between
+ * the two vertices
+ * #
+ * # **Q3. (10 points)** Given a graph represented as an adjacency matrix, check if the graph is connected
+ * #
+ * # **Q4. (10 points)** Given a graph represented by an adjacency matrix, print all nodes in DFS order
+ * #
+ * # **Q5. (10 points)** Given a graph represented by an adjacency matrix, print all nodes in BFS order
+ * #
+ * # **Q6. (10 points)** Given a graph represented by an adjacency matrix, find out if all the vertices are connected to
+ * the starting vertex
+ * #
+ * #
+ */
 public class Graph {
+    /**
+     * Given a graph represented as an adjacency matrix, and two vertices, find the shortest path between the two vertices
+     *
+     * @param adjMatrix the adjacency matrix of the graph
+     * @param s         The starting vertex.
+     * @param e         The end vertex.
+     * @return An ArrayList of integers.
+     */
     public static ArrayList<Integer> getPathBFS(int[][] adjMatrix, int s, int e) {
         Queue<Integer> pendingVertices = new LinkedList<>();
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -40,6 +67,14 @@ public class Graph {
         }
     }
 
+    /**
+     * Given a graph represented by an adjacency matrix, and a starting vertex,
+     * find if there is a path from the starting vertex to any other vertex in the graph
+     *
+     * @param edges   the graph represented as an adjacency matrix
+     * @param sv      The starting vertex.
+     * @param visited A boolean array that keeps track of whether a node has been visited or not.
+     */
     private static void hasPathHelper(int[][] edges, int sv, boolean[] visited) {
         visited[sv] = true;
         int n = edges.length;
@@ -50,12 +85,21 @@ public class Graph {
         }
     }
 
+    // A helper function for hasPath function.
     public static boolean hasPath(int[][] edges, int sv, int ev) {
         boolean[] visited = new boolean[edges.length];
         hasPathHelper(edges, sv, visited);
         return visited[ev];
     }
 
+    /**
+     * Given a graph represented by an adjacency matrix, and a starting vertex,
+     * find out if all the vertices are connected to the starting vertex
+     *
+     * @param edges   the graph represented as an adjacency matrix
+     * @param sv      The starting vertex.
+     * @param visited A boolean array that keeps track of whether a node has been visited or not.
+     */
     public static void isConnectedHelper(int[][] edges, int sv, boolean[] visited) {
         visited[sv] = true;
         int n = edges.length;
@@ -66,6 +110,12 @@ public class Graph {
         }
     }
 
+    /**
+     * Given a graph represented by a 2D array, check if the graph is connected
+     *
+     * @param edges the graph represented as an adjacency matrix
+     * @return The boolean value of whether the graph is connected or not.
+     */
     public static boolean isConnected(int[][] edges) {
         boolean[] visited = new boolean[edges.length];
         isConnectedHelper(edges, 0, visited);
@@ -77,6 +127,13 @@ public class Graph {
         return true;
     }
 
+    /**
+     * Prints all vertices in the graph reachable from the given vertex
+     *
+     * @param edges   the adjacency matrix of the graph
+     * @param sv      The starting vertex.
+     * @param visited A boolean array that keeps track of whether a node has been visited or not.
+     */
     public static void printHelperDFS(int[][] edges, int sv, boolean[] visited) {
         System.out.println(sv);
         visited[sv] = true;
@@ -88,6 +145,11 @@ public class Graph {
         }
     }
 
+    /**
+     * Given a graph represented by a 2D array, print all nodes in DFS order
+     *
+     * @param edges the adjacency matrix of the graph
+     */
     public static void printDFS(int[][] edges) {
         boolean[] visited = new boolean[edges.length];
         for (int i = 0; i < edges.length; i++) {
@@ -97,6 +159,13 @@ public class Graph {
         }
     }
 
+    /**
+     * Print all the vertices in the graph using BFS
+     *
+     * @param edges   2D array of integers. edges[i][j] = 1 means there is a directed edge from i to j.
+     * @param sv      The starting vertex.
+     * @param visited A boolean array that keeps track of whether a node has been visited or not.
+     */
     public static void printHelperBFS(int[][] edges, int sv, boolean[] visited) {
         Queue<Integer> q = new LinkedList<>();
         q.add(sv);
@@ -114,6 +183,11 @@ public class Graph {
         }
     }
 
+    /**
+     * Print all nodes in the graph in breadth-first order
+     *
+     * @param edges the adjacency matrix of the graph
+     */
     public static void printBFS(int[][] edges) {
         boolean[] visited = new boolean[edges.length];
         for (int i = 0; i < edges.length; i++) {
@@ -123,6 +197,10 @@ public class Graph {
         }
     }
 
+    /**
+     * Given a graph represented as an adjacency matrix,
+     * print the DFS traversal of the graph.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter no. of vertices or nodes");
@@ -137,6 +215,7 @@ public class Graph {
             edges[fv][sv] = 1;
             edges[sv][fv] = 1;
         }
+        // Printing the DFS and BFS traversal of the graph.
         System.out.println("DFS:");
         printDFS(edges);
         System.out.println("BFS:");
