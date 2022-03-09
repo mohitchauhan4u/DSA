@@ -25,6 +25,9 @@ public class MagicNumber {
         }
     }
 
+    /**
+     * Prints the magic number of a given number
+     */
     public static void main(String[] args) {
         magicNumber(163);
         magicNumber(123);
