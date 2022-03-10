@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BinarySearchTree {
+
+
     public static ArrayList<Integer> nodeToRootPathInBST(BinarySearchTreeNode<Integer> root, int x){
         if(root==null){
             return new ArrayList<Integer>();
@@ -55,7 +57,7 @@ public class BinarySearchTree {
 
     public static int maximum(BinarySearchTreeNode<Integer> root) {
         if (root == null) {
-            return Integer.MAX_VALUE;
+            return Integer.MIN_VALUE;
         }
         if (root.right == null) {
             return root.data;
@@ -65,7 +67,7 @@ public class BinarySearchTree {
 
     public static int minimum(BinarySearchTreeNode<Integer> root) {
         if (root == null) {
-            return Integer.MIN_VALUE;
+            return Integer.MAX_VALUE;
         }
 //        return Math.min(root.data,Math.min(minimum(root.left),minimum(root.right)));
         if (root.left == null) {
@@ -75,7 +77,6 @@ public class BinarySearchTree {
     }
 
     public static boolean isBST(BinarySearchTreeNode<Integer> root) {
-        /// wrong output
         if (root == null) {
             return true;
         }
@@ -83,11 +84,11 @@ public class BinarySearchTree {
         int rightMin = minimum(root.right);
 
         if (leftMax > root.data) {
-            System.out.println("left error" + leftMax);
+            System.out.println("left error " + leftMax);
             return false;
         }
         if (rightMin < root.data) {
-            System.out.println("right error" + rightMin);
+            System.out.println("right error " + rightMin);
             return false;
         }
         boolean isLeftBST = isBST(root.left);
@@ -233,10 +234,10 @@ public class BinarySearchTree {
         elementBetweenK1andK2(root, 3, 8);
         System.out.println();
         System.out.println(minimum(root));
-        System.out.println(maximum(root));
-        System.out.println(isBST(root));*/
-        printTreeDetailed(root);
-        ArrayList<Integer> path=nodeToRootPathInBST(root,2);
-        System.out.println(path);
+        System.out.println(maximum(root));*/
+        System.out.println(isBST(root));
+//        printTreeDetailed(root);
+//        ArrayList<Integer> path=nodeToRootPathInBST(root,2);
+//        System.out.println(path);
     }
 }
