@@ -1,8 +1,9 @@
-package DayCoding_150_Question;
+package OnlineQuestions;
 
-public class Array {
+public class LeetcodeRomanToInt {
     public static void main(String[] args) {
         System.out.println(romanToInt("MDCDLXI"));
+        System.out.println(romanToInt("CM"));
     }
 
     public static int romanToInt(String s) {
@@ -35,9 +36,7 @@ public class Array {
             }
         }
 
-        if (i == (s.length())) {
-
-        } else {
+        if (i != (s.length())) {
             if (s.charAt(i) == 'I') {
                 ans += 1;
             } else if (s.charAt(i) == 'V') {
