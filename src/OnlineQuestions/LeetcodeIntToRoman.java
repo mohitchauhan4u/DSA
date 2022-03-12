@@ -1,13 +1,19 @@
 package OnlineQuestions;
 
 public class LeetcodeIntToRoman {
+    /**
+     * Given a number, convert it to a roman numeral
+     *
+     * @param num the number that needs to be converted to Roman numerals.
+     * @return Nothing.
+     */
     public static String intToRoman(int num) {
-        StringBuilder str= new StringBuilder();
+        StringBuilder str = new StringBuilder();
         int[] values = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
         String[] symbols = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
-        while(num > 0){
+        while (num > 0) {
             for (int i = 12; i >= 0; i--) {
-                if(num >= values[i]){
+                if (num >= values[i]) {
                     num -= values[i];
                     str.append(symbols[i]);
                     break;
