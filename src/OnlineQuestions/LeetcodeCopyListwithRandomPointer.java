@@ -1,12 +1,21 @@
 package OnlineQuestions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LeetcodeCopyListwithRandomPointer {
     public static void main(String[] args) {
-        copyLLWithRandomPointer(null);
+        copyRandomList(new Node(1));
     }
-    public static Node copyLLWithRandomPointer(Node head){
+    private static Map<Node,Node> map = new HashMap<>();
 
-        return null;
+    public static Node copyRandomList(Node head) {
+        if(head == null) return null;
+        Node temp = new Node(head.val);
+        map.put(head,temp);
+        temp.next = copyRandomList(head.next);
+        temp.random = map.get(head.random);
+        return temp;
     }
 }
 class Node {
