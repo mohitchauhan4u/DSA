@@ -1,5 +1,5 @@
 // A package declaration. It is a way to organize classes in a package.
-package Graph;
+package Graph_1;
 
 // Importing the java.util package.
 
