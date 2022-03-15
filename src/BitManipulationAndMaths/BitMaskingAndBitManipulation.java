@@ -1,6 +1,6 @@
 package BitManipulationAndMaths;
 
-public class BitMaskingAndMath {
+public class BitMaskingAndBitManipulation {
     // left shift a<<b=a*2^b    number a left shifted b times
     //right shift a>>b=a/2^b    number a right shifted b times
 
