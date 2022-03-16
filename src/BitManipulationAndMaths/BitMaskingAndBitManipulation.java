@@ -219,6 +219,12 @@ public class BitMaskingAndBitManipulation {
         System.out.println(findXOROfNumber(18));
     }
 
+    /**
+     * Given a number, find the XOR of the number with all numbers less than it
+     *
+     * @param n The number to find the XOR of.
+     * @return The XOR of the number.
+     */
     private static int findXOROfNumber(int n) {
         int ans;
         if (n % 4 == 0) {
@@ -232,6 +238,5 @@ public class BitMaskingAndBitManipulation {
         }
         return ans;
     }
-
 
 }
