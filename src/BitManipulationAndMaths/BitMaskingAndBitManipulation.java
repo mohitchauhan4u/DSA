@@ -33,7 +33,16 @@ public class BitMaskingAndBitManipulation {
         System.out.println(magicNumberOf5(3));
         System.out.println(magicNumberOf5(7));
         System.out.println(magicNumberOf5(6));
-
+        System.out.println();
+        System.out.println(numberOfDigits(3, 2));
+        System.out.println(numberOfDigits(3, 10));
+        System.out.println(numberOfDigits(127, 2));
+        System.out.println(numberOfDigits(-128, 2));
+        System.out.println(numberOfDigits(-127, 2));
+        System.out.println(numberOfDigits(127, 10));
+        System.out.println(numberOfDigits(127, 8));
+        System.out.println(numberOfDigits(127, 16));
+        System.out.println();
     }
 
     public static int findUniqueNumberInArray(int[] arr) {
@@ -73,5 +82,9 @@ public class BitMaskingAndBitManipulation {
             base = base * 5;
         }
         return ans;    */
+    }
+
+    public static int numberOfDigits(int n, int base) {
+        return (int) (Math.log(n) / Math.log(base)) + 1;
     }
 }
