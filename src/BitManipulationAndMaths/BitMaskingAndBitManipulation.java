@@ -21,6 +21,10 @@ public class BitMaskingAndBitManipulation {
         System.out.println(bitAtIthPosition(125, 1));
         System.out.println(setTheIthBit(121, 3));
         System.out.println(setTheIthBit(125, 2));
+        System.out.println(resetTheIthBit(127, 1));
+        System.out.println(resetTheIthBit(127, 2));
+        System.out.println(resetTheIthBit(127, 3));
+        System.out.println(resetTheIthBit(127, 4));
 
     }
 
@@ -37,5 +41,8 @@ public class BitMaskingAndBitManipulation {
     }
     public static int setTheIthBit(int n,int i){
         return n|(1<<(i-1));
+    }
+    public static int resetTheIthBit(int n,int i){
+        return n&(~(1<<(i-1)));
     }
 }
