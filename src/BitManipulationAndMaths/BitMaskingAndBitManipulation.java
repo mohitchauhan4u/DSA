@@ -39,10 +39,12 @@ public class BitMaskingAndBitManipulation {
     public static int bitAtIthPosition(int n, int i) {
         return (n & 1 << (i - 1));
     }
-    public static int setTheIthBit(int n,int i){
-        return n|(1<<(i-1));
+
+    public static int setTheIthBit(int n, int i) {
+        return n | (1 << (i - 1));
     }
-    public static int resetTheIthBit(int n,int i){
-        return n&(~(1<<(i-1)));
+
+    public static int resetTheIthBit(int n, int i) {
+        return n & (~(1 << (i - 1)));
     }
 }
