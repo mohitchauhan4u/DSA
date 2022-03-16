@@ -107,14 +107,33 @@ public class BitMaskingAndBitManipulation {
         return (int) (Math.log(n) / Math.log(base)) + 1;
     }
 
+    /**
+     * Given a number n, return the number of unique binary trees with n nodes
+     *
+     * @param n the number of rows in the triangle
+     * @return The number of ways to choose k elements from a set of n elements.
+     */
     public static int pascalTriangle(int n) {
         return 1 << (n - 1);
     }
 
+    /**
+     * Given an integer, return true if it is a power of two
+     *
+     * @param n The number to check.
+     * @return The method returns true if the number is a power of two, and false otherwise.
+     */
     public static boolean powerOfTwo(int n) {
         return (n & n - 1) == 0;
     }
 
+    /**
+     * Given a number n and a power p, return n^p
+     *
+     * @param n the base
+     * @param power The power to which the number is to be raised.
+     * @return The answer to the question.
+     */
     public static int numberToThePower(int n, int power) {
         int ans = 1;
         while (power > 0) {
@@ -127,6 +146,12 @@ public class BitMaskingAndBitManipulation {
         return ans;
     }
 
+    /**
+     * Given an integer, count the number of set bits in the binary representation of that integer
+     *
+     * @param n The integer to be converted.
+     * @return The number of set bits in the integer n.
+     */
     public static int numberOfSetBits(int n) {
         int count = 0;
         while (n != 0) {
@@ -188,5 +213,6 @@ public class BitMaskingAndBitManipulation {
         System.out.println(numberOfSetBits(21));
         System.out.println(numberOfSetBits(127));
     }
+
 
 }
