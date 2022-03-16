@@ -168,7 +168,7 @@ public class BitMaskingAndBitManipulation {
      * @return The XOR of the number.
      */
     private static int findXOROfNumber(int n) {
-        int ans=0;
+        int ans = 0;
         if (n % 4 == 0) {
             ans = n;
         } else if (n % 4 == 1) {
@@ -177,6 +177,17 @@ public class BitMaskingAndBitManipulation {
             ans = n + 1;
         }
         return ans;
+    }
+
+    /**
+     * Find the XOR of all numbers from s to e
+     *
+     * @param s start index of the range
+     * @param e The number whose XOR is to be found.
+     * @return The XOR of the range.
+     */
+    public static int XORInRange(int s, int e) {
+        return findXOROfNumber(e) ^ findXOROfNumber(s - 1);
     }
 
     public static void main(String[] args) {
@@ -236,19 +247,9 @@ public class BitMaskingAndBitManipulation {
         System.out.println(findXOROfNumber(15));
         System.out.println(findXOROfNumber(18));
         System.out.println();
-        System.out.println(XORInRange(3,9));
-        System.out.println(XORInRange(7,9028937));
-    }
-    /**
-     * Find the XOR of all numbers from s to e
-     *
-     * @param s start index of the range
-     * @param e The number whose XOR is to be found.
-     * @return The XOR of the range.
-     */
-    public static int XORInRange(int s,int e){
-        return findXOROfNumber(e)^findXOROfNumber(s-1);
+        System.out.println(XORInRange(3, 9));
+        System.out.println(XORInRange(7, 9028937));
     }
 
-    
+
 }
