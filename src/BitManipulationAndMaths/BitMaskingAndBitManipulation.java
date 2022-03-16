@@ -30,6 +30,10 @@ public class BitMaskingAndBitManipulation {
         System.out.println(resetTheIthBit(127, 3));
         System.out.println(resetTheIthBit(127, 4));
         System.out.println();
+        System.out.println(magicNumberOf5(3));
+        System.out.println(magicNumberOf5(7));
+        System.out.println(magicNumberOf5(6));
+
     }
 
     public static int findUniqueNumberInArray(int[] arr) {
@@ -50,5 +54,24 @@ public class BitMaskingAndBitManipulation {
 
     public static int resetTheIthBit(int n, int i) {
         return n & (~(1 << (i - 1)));
+    }
+
+    public static int magicNumberOf5(int n) {
+        int ans = 0, index = 1;
+        while (n > 0) {
+            if ((n & 1) == 1) ans += Math.pow(5, index);
+            n = n >> 1;
+            index++;
+        }
+        return ans;
+        /*or
+        int ans = 0, base = 5;
+        while (n > 0) {
+            int last = n & 1;
+            n = n >> 1;
+            ans += last * base;
+            base = base * 5;
+        }
+        return ans;    */
     }
 }
