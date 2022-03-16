@@ -17,8 +17,10 @@ public class BitMaskingAndBitManipulation {
         System.out.println(oddOrNot(136) + " " + evenOrNot(136));
         System.out.println(findUniqueNumberInArray(new int[]{1, 2, 3, 1, 3, 5, 5, 6, 6, 7, 9, 7, 9, 8, 8}));
         System.out.println(findUniqueNumberInArray(new int[]{5, 5, 6, 6, 7, 9, 7, 9, 3, 8, 8}));
-        System.out.println(bitAtIthPosition(127,5));
-        System.out.println(bitAtIthPosition(125,1));
+        System.out.println(bitAtIthPosition(127, 5));
+        System.out.println(bitAtIthPosition(125, 1));
+        System.out.println(setTheIthBit(121, 3));
+        System.out.println(setTheIthBit(125, 2));
 
     }
 
@@ -32,5 +34,8 @@ public class BitMaskingAndBitManipulation {
 
     public static int bitAtIthPosition(int n, int i) {
         return (n & 1 << (i - 1));
+    }
+    public static int setTheIthBit(int n,int i){
+        return n|(1<<(i-1));
     }
 }
