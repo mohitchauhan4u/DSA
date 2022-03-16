@@ -138,10 +138,19 @@ public class BitMaskingAndBitManipulation {
         System.out.println(numberOfDigits(127, 8));
         System.out.println(numberOfDigits(127, 16));
         System.out.println();
+        System.out.println(pascalTriangle(1));
+        System.out.println(pascalTriangle(2));
+        System.out.println(pascalTriangle(3));
+        System.out.println(pascalTriangle(4));
+        System.out.println(pascalTriangle(5));
+        System.out.println();
+
     }
 
 
-
+    public static int pascalTriangle(int n){
+        return 1<<(n-1);
+    }
 
 
 }
