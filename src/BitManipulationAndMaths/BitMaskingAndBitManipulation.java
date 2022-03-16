@@ -144,6 +144,11 @@ public class BitMaskingAndBitManipulation {
         System.out.println(pascalTriangle(4));
         System.out.println(pascalTriangle(5));
         System.out.println();
+        System.out.println(powerOfTwo(1));
+        System.out.println(powerOfTwo(2));
+        System.out.println(powerOfTwo(256));
+        System.out.println(powerOfTwo(12));
+        System.out.println();
 
     }
 
@@ -151,6 +156,8 @@ public class BitMaskingAndBitManipulation {
     public static int pascalTriangle(int n){
         return 1<<(n-1);
     }
-
+    public static boolean powerOfTwo(int n){
+        return (n&n-1)==0;
+    }
 
 }
