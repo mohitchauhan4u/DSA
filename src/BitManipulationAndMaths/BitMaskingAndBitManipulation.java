@@ -24,39 +24,6 @@ public class BitMaskingAndBitManipulation {
         return (n & 1) == 0;
     }
 
-    public static void main(String[] args) {
-        System.out.println(oddOrNot(13) + " " + evenOrNot(13));
-        System.out.println(oddOrNot(136) + " " + evenOrNot(136));
-        System.out.println();
-        System.out.println(findUniqueNumberInArray(new int[]{1, 2, 3, 1, 3, 5, 5, 6, 6, 7, 9, 7, 9, 8, 8}));
-        System.out.println(findUniqueNumberInArray(new int[]{5, 5, 6, 6, 7, 9, 7, 9, 3, 8, 8}));
-        System.out.println();
-        System.out.println(bitAtIthPosition(127, 5));
-        System.out.println(bitAtIthPosition(125, 1));
-        System.out.println();
-        System.out.println(setTheIthBit(121, 3));
-        System.out.println(setTheIthBit(125, 2));
-        System.out.println();
-        System.out.println(resetTheIthBit(127, 1));
-        System.out.println(resetTheIthBit(127, 2));
-        System.out.println(resetTheIthBit(127, 3));
-        System.out.println(resetTheIthBit(127, 4));
-        System.out.println();
-        System.out.println(magicNumberOf5(3));
-        System.out.println(magicNumberOf5(7));
-        System.out.println(magicNumberOf5(6));
-        System.out.println();
-        System.out.println(numberOfDigits(3, 2));
-        System.out.println(numberOfDigits(3, 10));
-        System.out.println(numberOfDigits(127, 2));
-        System.out.println(numberOfDigits(-128, 2));
-        System.out.println(numberOfDigits(-127, 2));
-        System.out.println(numberOfDigits(127, 10));
-        System.out.println(numberOfDigits(127, 8));
-        System.out.println(numberOfDigits(127, 16));
-        System.out.println();
-    }
-
     /**
      * Find the unique number in an array
      *
@@ -139,4 +106,40 @@ public class BitMaskingAndBitManipulation {
     public static int numberOfDigits(int n, int base) {
         return (int) (Math.log(n) / Math.log(base)) + 1;
     }
+
+    public static void main(String[] args) {
+        System.out.println(oddOrNot(13) + " " + evenOrNot(13));
+        System.out.println(oddOrNot(136) + " " + evenOrNot(136));
+        System.out.println();
+        System.out.println(findUniqueNumberInArray(new int[]{1, 2, 3, 1, 3, 5, 5, 6, 6, 7, 9, 7, 9, 8, 8}));
+        System.out.println(findUniqueNumberInArray(new int[]{5, 5, 6, 6, 7, 9, 7, 9, 3, 8, 8}));
+        System.out.println();
+        System.out.println(bitAtIthPosition(127, 5));
+        System.out.println(bitAtIthPosition(125, 1));
+        System.out.println();
+        System.out.println(setTheIthBit(121, 3));
+        System.out.println(setTheIthBit(125, 2));
+        System.out.println();
+        System.out.println(resetTheIthBit(127, 1));
+        System.out.println(resetTheIthBit(127, 2));
+        System.out.println(resetTheIthBit(127, 3));
+        System.out.println(resetTheIthBit(127, 4));
+        System.out.println();
+        System.out.println(magicNumberOf5(3));
+        System.out.println(magicNumberOf5(7));
+        System.out.println(magicNumberOf5(6));
+        System.out.println();
+        System.out.println(numberOfDigits(3, 2));
+        System.out.println(numberOfDigits(3, 10));
+        System.out.println(numberOfDigits(127, 2));
+        System.out.println(numberOfDigits(-128, 2));
+        System.out.println(numberOfDigits(-127, 2));
+        System.out.println(numberOfDigits(127, 10));
+        System.out.println(numberOfDigits(127, 8));
+        System.out.println(numberOfDigits(127, 16));
+        System.out.println();
+    }
+
+
+
 }
