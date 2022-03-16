@@ -4,10 +4,22 @@ public class BitMaskingAndBitManipulation {
     // left shift a<<b=a*2^b    number a left shifted b times
     //right shift a>>b=a/2^b    number a right shifted b times
 
+    /**
+     * Given an integer, return true if it is odd, false otherwise
+     *
+     * @param n The number to check.
+     * @return A boolean value.
+     */
     public static boolean oddOrNot(int n) {
         return (n & 1) == 1;
     }
 
+    /**
+     * Given an integer, return true if it is even, false if it is odd
+     *
+     * @param n The number to check.
+     * @return The boolean value of whether the number is even or not.
+     */
     public static boolean evenOrNot(int n) {
         return (n & 1) == 0;
     }
@@ -45,6 +57,12 @@ public class BitMaskingAndBitManipulation {
         System.out.println();
     }
 
+    /**
+     * Find the unique number in an array
+     *
+     * @param arr an array of integers
+     * @return The unique number.
+     */
     public static int findUniqueNumberInArray(int[] arr) {
         int unique = 0;
         for (int n : arr) {
@@ -53,18 +71,45 @@ public class BitMaskingAndBitManipulation {
         return unique;
     }
 
+    /**
+     * Given a number n and a position i, return the value of the bit at ith position in n
+     *
+     * @param n The number to be checked.
+     * @param i The position of the bit to be retrieved.
+     * @return The bit at the ith position of the number n.
+     */
     public static int bitAtIthPosition(int n, int i) {
         return (n & 1 << (i - 1));
     }
 
+    /**
+     * Set the ith bit of n to 1
+     *
+     * @param n The number to set the ith bit of.
+     * @param i The index of the bit to be set.
+     * @return The number with the ith bit set to 1.
+     */
     public static int setTheIthBit(int n, int i) {
         return n | (1 << (i - 1));
     }
 
+    /**
+     * Given a number n and an index i, reset the ith bit of n to 0
+     *
+     * @param n The number in which we want to reset the ith bit.
+     * @param i The index of the bit to be reset.
+     * @return The number with the ith bit reset.
+     */
     public static int resetTheIthBit(int n, int i) {
         return n & (~(1 << (i - 1)));
     }
 
+    /**
+     * Given a number n, return the number of 5s in the number n!
+     *
+     * @param n the number to be converted to the base 5.
+     * @return The number of 5s in the binary representation of n.
+     */
     public static int magicNumberOf5(int n) {
         int ans = 0, index = 1;
         while (n > 0) {
@@ -84,6 +129,13 @@ public class BitMaskingAndBitManipulation {
         return ans;    */
     }
 
+    /**
+     * Given a number and a base, return the number of digits in the number in that base
+     *
+     * @param n    The number to be converted.
+     * @param base the base of the number system.
+     * @return The number of digits in the number n in base base.
+     */
     public static int numberOfDigits(int n, int base) {
         return (int) (Math.log(n) / Math.log(base)) + 1;
     }
