@@ -130,7 +130,7 @@ public class BitMaskingAndBitManipulation {
     /**
      * Given a number n and a power p, return n^p
      *
-     * @param n the base
+     * @param n     the base
      * @param power The power to which the number is to be raised.
      * @return The answer to the question.
      */
@@ -212,6 +212,25 @@ public class BitMaskingAndBitManipulation {
         System.out.println(numberOfSetBits(15));
         System.out.println(numberOfSetBits(21));
         System.out.println(numberOfSetBits(127));
+        System.out.println();
+        System.out.println(findXOROfNumber(4));
+        System.out.println(findXOROfNumber(9));
+        System.out.println(findXOROfNumber(15));
+        System.out.println(findXOROfNumber(18));
+    }
+
+    private static int findXOROfNumber(int n) {
+        int ans;
+        if (n % 4 == 0) {
+            ans = n;
+        } else if (n % 4 == 1) {
+            ans = 1;
+        } else if (n % 4 == 2) {
+            ans = n + 1;
+        } else {
+            ans = 0;
+        }
+        return ans;
     }
 
 
