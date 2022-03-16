@@ -161,6 +161,24 @@ public class BitMaskingAndBitManipulation {
         return count;
     }
 
+    /**
+     * Given a number, find the XOR of the number with all numbers less than it
+     *
+     * @param n The number to find the XOR of.
+     * @return The XOR of the number.
+     */
+    private static int findXOROfNumber(int n) {
+        int ans=0;
+        if (n % 4 == 0) {
+            ans = n;
+        } else if (n % 4 == 1) {
+            ans = 1;
+        } else if (n % 4 == 2) {
+            ans = n + 1;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         System.out.println(oddOrNot(13) + " " + evenOrNot(13));
         System.out.println(oddOrNot(136) + " " + evenOrNot(136));
@@ -217,26 +235,19 @@ public class BitMaskingAndBitManipulation {
         System.out.println(findXOROfNumber(9));
         System.out.println(findXOROfNumber(15));
         System.out.println(findXOROfNumber(18));
+        System.out.println();
+        System.out.println(XORInRange(3,9));
+        System.out.println(XORInRange(7,9028937));
     }
-
     /**
-     * Given a number, find the XOR of the number with all numbers less than it
+     * Find the XOR of all numbers from s to e
      *
-     * @param n The number to find the XOR of.
-     * @return The XOR of the number.
+     * @param s start index of the range
+     * @param e The number whose XOR is to be found.
+     * @return The XOR of the range.
      */
-    private static int findXOROfNumber(int n) {
-        int ans;
-        if (n % 4 == 0) {
-            ans = n;
-        } else if (n % 4 == 1) {
-            ans = 1;
-        } else if (n % 4 == 2) {
-            ans = n + 1;
-        } else {
-            ans = 0;
-        }
-        return ans;
+    public static int XORInRange(int s,int e){
+        return findXOROfNumber(e)^findXOROfNumber(s-1);
     }
 
 }
