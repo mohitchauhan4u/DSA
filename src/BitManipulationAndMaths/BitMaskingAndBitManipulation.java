@@ -107,6 +107,35 @@ public class BitMaskingAndBitManipulation {
         return (int) (Math.log(n) / Math.log(base)) + 1;
     }
 
+    public static int pascalTriangle(int n) {
+        return 1 << (n - 1);
+    }
+
+    public static boolean powerOfTwo(int n) {
+        return (n & n - 1) == 0;
+    }
+
+    public static int numberToThePower(int n, int power) {
+        int ans = 1;
+        while (power > 0) {
+            if ((power & 1) == 1) {
+                ans *= n;
+            }
+            n *= n;
+            power = power >> 1;
+        }
+        return ans;
+    }
+
+    public static int numberOfSetBits(int n) {
+        int count = 0;
+        while (n != 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         System.out.println(oddOrNot(13) + " " + evenOrNot(13));
         System.out.println(oddOrNot(136) + " " + evenOrNot(136));
@@ -149,10 +178,10 @@ public class BitMaskingAndBitManipulation {
         System.out.println(powerOfTwo(256));
         System.out.println(powerOfTwo(12));
         System.out.println();
-        System.out.println(numberToThePower(3,5));
-        System.out.println(numberToThePower(30,3));
-        System.out.println(numberToThePower(4,5));
-        System.out.println(numberToThePower(2,12));
+        System.out.println(numberToThePower(3, 5));
+        System.out.println(numberToThePower(30, 3));
+        System.out.println(numberToThePower(4, 5));
+        System.out.println(numberToThePower(2, 12));
         System.out.println();
         System.out.println(numberOfSetBits(2));
         System.out.println(numberOfSetBits(15));
@@ -160,32 +189,4 @@ public class BitMaskingAndBitManipulation {
         System.out.println(numberOfSetBits(127));
     }
 
-
-    public static int pascalTriangle(int n) {
-        return 1 << (n - 1);
-    }
-
-    public static boolean powerOfTwo(int n) {
-        return (n & n - 1) == 0;
-    }
-
-    public static int numberToThePower(int n, int power) {
-        int ans = 1;
-        while (power > 0) {
-            if ((power & 1) == 1) {
-                ans *= n;
-            }
-            n *= n;
-            power = power >> 1;
-        }
-        return ans;
-    }
-    public static int numberOfSetBits(int n){
-        int count=0;
-        while (n!=0){
-            n=n&(n-1);
-            count++;
-        }
-        return count;
-    }
 }
