@@ -1,6 +1,5 @@
 package BinarySearchTree;
 
-import BinaryTree.BinaryTreeNode;
 import LinkedList.Node;
 
 import java.util.ArrayList;
@@ -9,28 +8,27 @@ import java.util.Scanner;
 public class BinarySearchTree {
 
 
-    public static ArrayList<Integer> nodeToRootPathInBST(BinarySearchTreeNode<Integer> root, int x){
-        if(root==null){
+    public static ArrayList<Integer> nodeToRootPathInBST(BinarySearchTreeNode<Integer> root, int x) {
+        if (root == null) {
             return new ArrayList<Integer>();
         }
-        if(root.data==x){
-            ArrayList<Integer> output=new ArrayList<Integer>();
+        if (root.data == x) {
+            ArrayList<Integer> output = new ArrayList<Integer>();
             output.add(root.data);
             return output;
         }
-        if(root.data>x) {
+        if (root.data > x) {
             ArrayList<Integer> leftOutput = nodeToRootPathInBST(root.left, x);
             if (!leftOutput.isEmpty()) {
                 leftOutput.add(root.data);
             }
             return leftOutput;
-        }
-        else if(root.data<x){
-        ArrayList<Integer> rightOutput=nodeToRootPathInBST(root.right,x);
-        if(!rightOutput.isEmpty()){
-            rightOutput.add(root.data);
+        } else if (root.data < x) {
+            ArrayList<Integer> rightOutput = nodeToRootPathInBST(root.right, x);
+            if (!rightOutput.isEmpty()) {
+                rightOutput.add(root.data);
             }
-        return rightOutput;
+            return rightOutput;
         }
         return new ArrayList<>();
     }
@@ -83,11 +81,12 @@ public class BinarySearchTree {
         int leftMax = maximum(root.left);
         int rightMin = minimum(root.right);
 
-        if (leftMax > root.data) {
+
+        if (root.left != null && leftMax >= root.data) {
             System.out.println("left error " + leftMax);
             return false;
         }
-        if (rightMin < root.data) {
+        if (root.right != null && rightMin <= root.data) {
             System.out.println("right error " + rightMin);
             return false;
         }
@@ -224,7 +223,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
-       // BinarySearchTreeNode<Integer> root = takeInputOfBST();
+        // BinarySearchTreeNode<Integer> root = takeInputOfBST();
         BinarySearchTreeNode<Integer> root = takeTreeInput(true, 0, true);
 //        int[] arr = {1, 2, 3, 4, 5, 6, 7};
 //        BinarySearchTreeNode<Integer> root = sortedArrayToBST(arr);
