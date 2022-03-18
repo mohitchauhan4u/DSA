@@ -13,6 +13,10 @@ class Student {
     String name;
     float marks;
 
+    Student() {
+
+    }
+
     Student(int rollNo, String name, float marks) {
         this.rollNo = rollNo;
         this.name = name;
