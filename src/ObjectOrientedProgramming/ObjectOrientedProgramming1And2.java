@@ -1,6 +1,6 @@
 package ObjectOrientedProgramming;
 
-public class ObjectOrientedProgramming1 {
+public class ObjectOrientedProgramming1And2 {
 
     public static void main(String[] args) {
         Student s1 = new Student(1, "Mohit", 99);
