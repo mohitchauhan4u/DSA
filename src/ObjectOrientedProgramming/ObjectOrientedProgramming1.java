@@ -11,12 +11,12 @@ public class ObjectOrientedProgramming1 {
 }
 
 class Student {
-    int rollNo;
-    String name;
-    float marks;
+    int rollNo=10;
+    String name="kuch na";
+    float marks=34;
 
     Student() {
-        this(23,"default",100);
+       // this(23,"default",100);
     }
 
     Student(int rollNo, String name, float marks) {
