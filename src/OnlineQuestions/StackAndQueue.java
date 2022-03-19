@@ -3,7 +3,7 @@ package OnlineQuestions;
 public class StackAndQueue {
 
 }
-class Stack{
+class Stack<I extends Number> {
     int top=0;
 
 }
