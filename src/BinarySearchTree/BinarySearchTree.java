@@ -236,7 +236,7 @@ public class BinarySearchTree {
         System.out.println(maximum(root));*/
         System.out.println(isBST(root));
 //        printTreeDetailed(root);
-//        ArrayList<Integer> path=nodeToRootPathInBST(root,2);
+//        ArrayListClass<Integer> path=nodeToRootPathInBST(root,2);
 //        System.out.println(path);
     }
 }

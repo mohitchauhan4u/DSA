@@ -29,7 +29,7 @@ public class Graph {
      * @param adjMatrix the adjacency matrix of the graph
      * @param s         The starting vertex.
      * @param e         The end vertex.
-     * @return An ArrayList of integers.
+     * @return An ArrayListClass of integers.
      */
     public static ArrayList<Integer> getPathBFS(int[][] adjMatrix, int s, int e) {
         Queue<Integer> pendingVertices = new LinkedList<>();

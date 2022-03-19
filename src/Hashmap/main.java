@@ -178,7 +178,7 @@ public class main {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
-        ArrayList<Integer> arrayList = removeDuplicates(arr);
+        ArrayListClass<Integer> arrayList = removeDuplicates(arr);
         for (int i : arrayList) {
             System.out.print(i + " ");
         }
