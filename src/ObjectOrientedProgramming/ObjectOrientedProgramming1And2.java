@@ -7,6 +7,14 @@ public class ObjectOrientedProgramming1And2 {
         Student s2 = new Student();
         System.out.println(s1.rollNo + " " + s1.name + " " + s1.marks);
         System.out.println(s2.rollNo + " " + s2.name + " " + s2.marks);
+        int u;
+        //System.out.println(u);
+        u=5;
+    }
+
+    public static void check(int x) {
+        int u;
+//        System.out.println(u);
     }
 }
 
