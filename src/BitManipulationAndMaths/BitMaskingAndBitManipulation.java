@@ -2,7 +2,12 @@ package BitManipulationAndMaths;
 
 public class BitMaskingAndBitManipulation {
     // left shift a<<b=a*2^b    number a left shifted b times
-    //right shift a>>b=a/2^b    number a right shifted b times
+    //  right shift a>>b=a/2^b    number a right shifted b times
+
+    //  distributive property that plus and multiply :
+    //          (a1+a2)*(b1+b2) = a1*b1 + a1*b2 + a2*b1 + a2*b2
+    //  Distributive property is similar for AND and XOR here:
+    //  (a1^a2) & (b1^b2) = (a1&b1) ^ (a1&b2) ^ (a2&b1) ^ (a2&b2)
 
     /**
      * Given an integer, return true if it is odd, false otherwise
