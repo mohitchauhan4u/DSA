@@ -13,12 +13,6 @@ public class LeetcodePascalsTriangle {
         list.add(0, newList);
         size++;
         if (numRows == 1) return list;
-        newList = new ArrayList<>(size);
-        newList.add(1);
-        newList.add(1);
-        list.add(1, newList);
-        if (numRows == 2) return list;
-        size++;
         List<Integer> prev = newList;
         while (size <= numRows) {
             newList = new ArrayList<>(size);
@@ -38,7 +32,7 @@ public class LeetcodePascalsTriangle {
 
     public static void main(String[] args) {
         System.out.println(generate(1));
-        System.out.println(generate(2));
         System.out.println(generate(3));
+        System.out.println(generate(20));
     }
 }
