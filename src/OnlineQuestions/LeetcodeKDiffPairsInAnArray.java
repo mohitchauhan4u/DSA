@@ -1,9 +1,6 @@
 package OnlineQuestions;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class LeetcodeKDiffPairsInAnArray {
     public static void main(String[] args) {
@@ -11,6 +8,7 @@ public class LeetcodeKDiffPairsInAnArray {
     }
 
     public int findPairsFast(int[] arr, int k) {
+
         int ans = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int j : arr) {
