@@ -6,6 +6,7 @@ public class GFGArray {
 
     public static int[] rearrangeArrayInAlternatingPositiveAndNegativeItems(int[] arr){
 
+
         return arr;
     }
     public static int[] moveAllNegativeNumbersToBeginning(int[] arr) {
