@@ -12,14 +12,14 @@ public class GFGArray {
             positiveIndex++;
         }
         int negativeIndex = 1;
-        while (negativeIndex < arr.length && arr[negativeIndex] < 0 && positiveIndex < arr.length){
-            int temp=arr[negativeIndex];
-            arr[negativeIndex]=arr[positiveIndex];
-            arr[positiveIndex]=temp;
-            negativeIndex+=2;
-            positiveIndex+=1;
+        while (negativeIndex < arr.length && arr[negativeIndex] < 0 && positiveIndex < arr.length) {
+            int temp = arr[negativeIndex];
+            arr[negativeIndex] = arr[positiveIndex];
+            arr[positiveIndex] = temp;
+            negativeIndex += 2;
+            positiveIndex += 1;
         }
-            return arr;
+        return arr;
     }
 
     public static int[] moveAllNegativeNumbersToBeginning(int[] arr) {
@@ -53,7 +53,7 @@ public class GFGArray {
         //System.out.println(Arrays.toString(moveAllNegativeNumbersToBeginning(new int[]{1, -5, 2, -3, 4, 365, -1, -129, 5, 6, -7, 8})));
         System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{1, -5, 2, -3, 4, 365, -1, -129, 5, 6, -7, 8, -2, 11, 56, 247, 12, -26})));
         System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{1, -5, 2})));
-        System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{ -129, 5, 6, -7, 8, -2, 11, 56, 247, 12, -26})));
-        System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{ -129, 5, -6, -7, -8, -2, 11, -56, -247, 12, -26})));
+        System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{-129, 5, 6, -7, 8, -2, 11, 56, 247, 12, -26})));
+        System.out.println(Arrays.toString(rearrangeArrayInAlternatingPositiveAndNegativeItems(new int[]{-129, 5, -6, -7, -8, -2, 11, -56, -247, 12, -26})));
     }
 }
