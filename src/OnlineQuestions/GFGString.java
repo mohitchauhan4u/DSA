@@ -11,6 +11,7 @@ public class GFGString {
         for (int i = 0; i < len; i++) {
             if (chars[i] > 1) System.out.print((char) (i) + " ");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
