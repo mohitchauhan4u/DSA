@@ -57,8 +57,8 @@ public class GFGString {
     }
 
     public static void main(String[] args) {
-//        printAllTheDuplicatesInTheInputString("Mohit Chauhan");
-//        printAllTheDuplicatesInTheInputString("Mohit Rohit Sohit");
+        printAllTheDuplicatesInTheInputString("Mohit Chauhan");
+        printAllTheDuplicatesInTheInputString("Mohit Rohit Sohit");
         System.out.println(getPhoneNumber("one one double zero"));
     }
 }
