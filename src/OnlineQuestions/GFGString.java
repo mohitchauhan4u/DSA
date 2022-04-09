@@ -4,6 +4,24 @@ import java.util.HashMap;
 
 public class GFGString {
 
+    public static boolean checkIfStringIsValidShuffleOfTwoDistinctStrings(String s1, String s2, String str) {
+        if (str.length() != (s1.length() + s2.length())) {
+            return false;
+        }
+        HashMap<Character, Integer> map1 = new HashMap<>();
+        for (int i = 0; i < s1.length(); i++) {
+            map1.put(s1.charAt(i), map1.getOrDefault(s1.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < s2.length(); i++) {
+            map1.put(s2.charAt(i), map1.getOrDefault(s2.charAt(i), 0) + 1);
+        }
+        HashMap<Character, Integer> map2 = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            map2.put(str.charAt(i), map2.getOrDefault(str.charAt(i), 0) + 1);
+        }
+        return map1.equals(map2);
+    }
+
     public static boolean isOneStringRotationOfOther(String s1, String s2) {
         if (s1.length() != s2.length()) {
             return false;
@@ -54,14 +72,14 @@ public class GFGString {
             } else if (temp.toString().equals("triple")) {
                 count = 3;
             } else {
-                helper(str, map.get(temp.toString()), count);
+                getNumberHelper(str, map.get(temp.toString()), count);
                 count = 1;
             }
         }
         return str.toString();
     }
 
-    public static void helper(StringBuilder str, String temp, int n) {
+    private static void getNumberHelper(StringBuilder str, String temp, int n) {
         while (n > 0) {
             str.append(temp);
             n--;
@@ -72,9 +90,14 @@ public class GFGString {
 //        printAllTheDuplicatesInTheInputString("Mohit Chauhan");
 //        printAllTheDuplicatesInTheInputString("Mohit Rohit Sohit");
 //        System.out.println(getPhoneNumber("one one double zero"));
-        System.out.println(isOneStringRotationOfOther("",""));
-        System.out.println(isOneStringRotationOfOther("abcd","dcba"));
-        System.out.println(isOneStringRotationOfOther("ewfqejdb","injfwnce"));
-        System.out.println(isOneStringRotationOfOther("mohit","tihom"));
+//        System.out.println(isOneStringRotationOfOther("", ""));
+//        System.out.println(isOneStringRotationOfOther("abcd", "dcba"));
+//        System.out.println(isOneStringRotationOfOther("ewfqejdb", "injfwnce"));
+//        System.out.println(isOneStringRotationOfOther("mohit", "tihom"));
+        System.out.println(checkIfStringIsValidShuffleOfTwoDistinctStrings("abc", "abc", "aabbcc"));
+        System.out.println(checkIfStringIsValidShuffleOfTwoDistinctStrings("awabcc", "abbcc", "aabbbwacccc"));
+        System.out.println(checkIfStringIsValidShuffleOfTwoDistinctStrings("abc", "abcc", "aabbc"));
+        System.out.println(checkIfStringIsValidShuffleOfTwoDistinctStrings("", "", ""));
+        System.out.println(checkIfStringIsValidShuffleOfTwoDistinctStrings("aa", "bb", "aaabbb"));
     }
 }
