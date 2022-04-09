@@ -4,6 +4,18 @@ import java.util.HashMap;
 
 public class GFGString {
 
+    public static boolean isOneStringRotationOfOther(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) != s2.charAt(s2.length() - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void printAllTheDuplicatesInTheInputString(String s) {
         int len = 256;
         int[] chars = new int[len];
@@ -57,8 +69,12 @@ public class GFGString {
     }
 
     public static void main(String[] args) {
-        printAllTheDuplicatesInTheInputString("Mohit Chauhan");
-        printAllTheDuplicatesInTheInputString("Mohit Rohit Sohit");
-        System.out.println(getPhoneNumber("one one double zero"));
+//        printAllTheDuplicatesInTheInputString("Mohit Chauhan");
+//        printAllTheDuplicatesInTheInputString("Mohit Rohit Sohit");
+//        System.out.println(getPhoneNumber("one one double zero"));
+        System.out.println(isOneStringRotationOfOther("",""));
+        System.out.println(isOneStringRotationOfOther("abcd","dcba"));
+        System.out.println(isOneStringRotationOfOther("ewfqejdb","injfwnce"));
+        System.out.println(isOneStringRotationOfOther("mohit","tihom"));
     }
 }
