@@ -46,6 +46,7 @@ public class GFGString {
         System.out.println();
     }
 
+    //hackerrank sd intern 2022 test question
     public static String getPhoneNumber(String s) {
         StringBuilder str = new StringBuilder();
         HashMap<String, String> map = new HashMap<>();
