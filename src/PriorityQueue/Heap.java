@@ -17,17 +17,16 @@ public class Heap {
             swap(ci, pi);
             upHeapfiy(pi);
         }
-
     }
 
     public int remove() {
         swap(0, this.list.size() - 1);
         int rv = this.list.remove(this.list.size() - 1);
-        downheapify(0);
+        downHeapify(0);
         return rv;
     }
 
-    private void downheapify(int pi) {
+    private void downHeapify(int pi) {
         int c1 = 2 * pi + 1;
         int c2 = 2 * pi + 2;
         int mini = pi;
@@ -39,12 +38,12 @@ public class Heap {
         }
         if (mini != pi) {
             swap(pi, mini);
-            downheapify(mini);
+            downHeapify(mini);
         }
 
     }
 
-    public int getmin() {
+    public int getMin() {
         return this.list.get(0);
     }
 

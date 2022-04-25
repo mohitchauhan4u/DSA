@@ -16,7 +16,7 @@ public class Heap_Client {
         hp.add(21);
         hp.add(23);
         hp.Display();
-        System.out.println(hp.getmin());
+        System.out.println(hp.getMin());
         System.out.println(hp.remove());
         hp.Display();
     }
