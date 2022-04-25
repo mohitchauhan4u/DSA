@@ -8,18 +8,14 @@ public class Heap {
 
     public void add(int item) {
         this.list.add(item);
-        upheapfiy(this.list.size() - 1);
-
+        upHeapfiy(this.list.size() - 1);
     }
 
-    private void upheapfiy(int ci) {
-
+    private void upHeapfiy(int ci) {
         int pi = (ci - 1) / 2;
-
         if (this.list.get(pi) > this.list.get(ci)) {
             swap(ci, pi);
-            upheapfiy(pi);
-
+            upHeapfiy(pi);
         }
 
     }
@@ -28,9 +24,7 @@ public class Heap {
         swap(0, this.list.size() - 1);
         int rv = this.list.remove(this.list.size() - 1);
         downheapify(0);
-
         return rv;
-
     }
 
     private void downheapify(int pi) {
@@ -63,7 +57,5 @@ public class Heap {
         int jth = this.list.get(j);
         this.list.set(i, jth);
         this.list.set(j, ith);
-
     }
-
 }
