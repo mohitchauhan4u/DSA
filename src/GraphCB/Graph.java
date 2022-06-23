@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Graph {
 
-    public static void printHelperDFS(int adj_mat[][], int sv, boolean[] visited){
+    public static void printHelperDFS(int[][] adj_mat, int sv, boolean[] visited){
         System.out.print(sv+" ");
         visited[sv]=true;
         int v= adj_mat.length;
@@ -14,9 +14,9 @@ public class Graph {
             }
         }
     }
-    public  static void printDFS(int adj_mat[][], int sv){
+    public  static void printDFS(int[][] adj_mat, int sv){
         boolean[] visited=new boolean[adj_mat.length];
-        for(int i=0;i< adj_mat.length;i++) {
+        for(int i=sv;i< adj_mat.length;i++) {
             if(!visited[i]){
                 System.out.println();
                 printHelperDFS(adj_mat, i, visited);
