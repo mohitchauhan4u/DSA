@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Graph {
 
     public static void printHelper(int adj_mat[][],int sv,boolean[] visited){
-        System.out.println(sv);
+        System.out.print(sv+" ");
+        visited[sv]=true;
         int v= adj_mat.length;
         for(int i=0;i<v;i++){
             if(adj_mat[sv][i]==1 && !visited[i]){
@@ -17,6 +18,7 @@ public class Graph {
         boolean[] visited=new boolean[adj_mat.length];
         for(int i=0;i< adj_mat.length;i++) {
             if(!visited[i]){
+                System.out.println();
                 printHelper(adj_mat, i, visited);
             }
         }
@@ -35,6 +37,6 @@ public class Graph {
             adj_mat[sv][ev]=1;
             adj_mat[ev][sv]=1;
         }
-        //print(adj_mat,0);
+        print(adj_mat,0);
     }
 }
