@@ -13,9 +13,9 @@ import java.util.*;
  * #
  * # **Q3. (10 points)** Given a graph represented as an adjacency matrix, check if the graph is connected
  * #
- * # **Q4. (10 points)** Given a graph represented by an adjacency matrix, print all nodes in DFS order
+ * # **Q4. (10 points)** Given a graph represented by an adjacency matrix, printDFS all nodes in DFS order
  * #
- * # **Q5. (10 points)** Given a graph represented by an adjacency matrix, print all nodes in BFS order
+ * # **Q5. (10 points)** Given a graph represented by an adjacency matrix, printDFS all nodes in BFS order
  * #
  * # **Q6. (10 points)** Given a graph represented by an adjacency matrix, find out if all the vertices are connected to
  * the starting vertex
@@ -146,7 +146,7 @@ public class Graph {
     }
 
     /**
-     * Given a graph represented by a 2D array, print all nodes in DFS order
+     * Given a graph represented by a 2D array, printDFS all nodes in DFS order
      *
      * @param edges the adjacency matrix of the graph
      */
@@ -199,7 +199,7 @@ public class Graph {
 
     /**
      * Given a graph represented as an adjacency matrix,
-     * print the DFS traversal of the graph.
+     * printDFS the DFS traversal of the graph.
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

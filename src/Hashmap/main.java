@@ -164,23 +164,23 @@ public class main {
         System.out.println(map.search("abc1"));
 //        Set<String> key=map.keySet();
 //        for(String s:key){
-//            System.out.print(s+" ");
+//            System.out.printDFS(s+" ");
 //        }
         //System.out.println(map.get("abc4"));
         map.delete("abc1");
         System.out.println(map.size());
 //        key=map.keySet();
 //        for(String s:key){
-//            System.out.print(s+" ");
+//            System.out.printDFS(s+" ");
 //        }
         int[] arr = {3, 1, 1, 4, 4};
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.printDFS(arr[i] + " ");
         }
         System.out.println();
         ArrayListClass<Integer> arrayList = removeDuplicates(arr);
         for (int i : arrayList) {
-            System.out.print(i + " ");
+            System.out.printDFS(i + " ");
         }
         System.out.println();
         System.out.println(maxFrequencyNumber(arr));
@@ -203,7 +203,7 @@ public class main {
         map.put("abc1",1);
         Set<String> key=map.keySet();
         for(String s:key ){
-            System.out.print(s+" ");
+            System.out.printDFS(s+" ");
         }
         System.out.println();
         System.out.println(extractUniqueCharacters(""));*/

@@ -372,7 +372,7 @@ public class LinkedList extends DSA_450_LL {
     public static void main(String[] args) {
         //        Node<Integer> head1 = takeInput();
         //        Node<Integer> head2 = takeInput();
-        //print(head);
+        //printDFS(head);
         /*    public static int midPointNotCountMethod(Node<Integer> head){
         Node<Integer> fast=head;
         Node<Integer> slow=head;
@@ -387,9 +387,9 @@ public class LinkedList extends DSA_450_LL {
          head1=insert(head1);
                 System.out.println(midPointNotCountMethod(head1));
         System.out.println(midPointCountMethod(head1));
-        print(head1);
+        printDFS(head1);
        head = insertNodeAtPosition(head,  1233,  2);
-        print(head);
+        printDFS(head);
         insertRecursive(head,23,0);
         insertRecursive(head,123,4);
         printRecursive(head);
@@ -397,18 +397,18 @@ public class LinkedList extends DSA_450_LL {
         printReverse(head);
         head=reverseRecursive(head);
         System.out.println(midPointSlowFastMethod(head));
-        print(deleteRecursive(head, 5));*/
-        //print(reverseRecursive(head));
-//        print(moveLastElementToFrontOfAGivenLinkedList(head));
-//        print(removeDuplicatesSorted(head));
-//        print(removeDuplicatesUnSorted(head));
-        //print(appendLastNToFirst(head,4));
+        printDFS(deleteRecursive(head, 5));*/
+        //printDFS(reverseRecursive(head));
+//        printDFS(moveLastElementToFrontOfAGivenLinkedList(head));
+//        printDFS(removeDuplicatesSorted(head));
+//        printDFS(removeDuplicatesUnSorted(head));
+        //printDFS(appendLastNToFirst(head,4));
         //System.out.println(palindrome(head));
-        //print(mergeTwoSortedLL(head1,head2));
+        //printDFS(mergeTwoSortedLL(head1,head2));
         Node<Integer> head = takeInput();
         print(head);
-        // print(evenAfterOddLinkedList(head));
-       // print(deleteEveryNNodesAfterMNodes(head, 2, 2));
+        // printDFS(evenAfterOddLinkedList(head));
+       // printDFS(deleteEveryNNodesAfterMNodes(head, 2, 2));
         print(swapTwoNodesOfLL(head,3,4));
     }
 }

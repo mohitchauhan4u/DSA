@@ -95,7 +95,7 @@ public class StackCollections {
         stack.push(9);
         stack.push(10);
         while (!stack.isEmpty()){
-            System.out.print(stack.pop()+" ");
+            System.out.printDFS(stack.pop()+" ");
         }
         System.out.println();
         stack.push(1);
@@ -110,7 +110,7 @@ public class StackCollections {
         stack.push(10);
         reverseStack(stack);
         while (!stack.isEmpty()){
-            System.out.print(stack.pop()+" ");
+            System.out.printDFS(stack.pop()+" ");
         }*/
         System.out.println(balancedParenthesis("(])"));
         System.out.println(balancedParenthesisBetter("(])"));
