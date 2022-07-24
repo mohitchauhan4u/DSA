@@ -82,22 +82,50 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter no of vertex");
-        int v = sc.nextInt();
-        System.out.println("Enter no of edges");
-        int e = sc.nextInt();
-        int[][] adj_mat = new int[v][v];
-        for (int i = 0; i < e; i++) {
-            int sv = sc.nextInt();
-            int ev = sc.nextInt();
-            adj_mat[sv][ev] = 1;
-            adj_mat[ev][sv] = 1;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter no of vertex");
+//        int v = sc.nextInt();
+//        System.out.println("Enter no of edges");
+//        int e = sc.nextInt();
+//        int[][] adj_mat = new int[v][v];
+//        for (int i = 0; i < e; i++) {
+//            int sv = sc.nextInt();
+//            int ev = sc.nextInt();
+//            adj_mat[sv][ev] = 1;
+//            adj_mat[ev][sv] = 1;
+//        }
+//        System.out.println("DFS:-");
+//        printDFS(adj_mat, 0);
+//        System.out.println();
+//        System.out.println("BFS:-");
+//        printBFS(adj_mat, 0);
+        int[] ans=tcs(new int[]{100,80,60,70,60,85,75});
+        for (int i:ans
+             ) {
+            System.out.print(i+" ");
         }
-        System.out.println("DFS:-");
-        printDFS(adj_mat, 0);
         System.out.println();
-        System.out.println("BFS:-");
-        printBFS(adj_mat, 0);
+
+        int[] ans1=tcs(new int[]{150,90,80,85,65,70,75});
+        for (int i:ans1
+             ) {
+            System.out.print(i+" ");
+        }
+    }
+    public static int[] tcs(int[] arr){
+        int len=arr.length;
+        int[] ans=new int[len];
+        for(int i=0;i<len;i++){
+            int count=0;
+            for(int j=i-1;j>=0;j--){
+                if(arr[i]>arr[j]){
+                    count++;
+                }else{
+                    break;
+                }
+            }
+            ans[i]=count+1;
+        }
+        return ans;
     }
 }
